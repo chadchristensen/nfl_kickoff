@@ -1,17 +1,34 @@
 import React, { useState, useEffect } from 'react';
+import { useInterval } from '../customHooks.js';
 import gameData from '../gameData.js';
 import TeamCard from './TeamCard.js';
 import Countdown from './Countdown.js';
 import TeamSelect from './TeamSelect.js';
 
 export default function Home(props) {
-  // Hooks
+  // State Hooks
   const [teamInfo, setTeamInfo] = useState({});
   const [opponentInfo, setOpponentInfo] = useState({});
   const [countdown, setCountdown] = useState(0);
 
+  useEffect(() => {
+    const teamInfo = JSON.parse(sessionStorage.getItem('teamInfo'));
+
+    if (teamInfo) {
+      const kickoffTimeObject = new Date(teamInfo.kickoff);
+      const opponentInfo = gameData[teamInfo.opponent.toLowerCase()];
+      setCountdown(kickoffTimeObject.getTime() - Date.now());
+      setTeamInfo(teamInfo);
+      setOpponentInfo(opponentInfo);
+    }
+  }, []);
+
   // Interval
-  let countdownTimeout = null;
+  useInterval(() => {
+    if (countdown > 0) {
+      setCountdown(countdown - 1000);
+    }
+  }, 1000);
 
   const handleTeamChange = evt => {
     const teamInfo = gameData[evt.target.value.toLowerCase()];
@@ -26,31 +43,6 @@ export default function Home(props) {
     // Store team in sessionStorage to keep result if page refreshes
     sessionStorage.setItem('teamInfo', JSON.stringify(teamInfo));
   };
-
-  useEffect(() => {
-    function handleCountdown() {
-      setCountdown(countdown - 1000);
-    }
-
-    countdownTimeout = setTimeout(handleCountdown, 1000);
-
-    return () => {
-      clearTimeout(countdownTimeout);
-    };
-  });
-
-  // TODO: Clean this up
-  useEffect(() => {
-    const teamInfo = JSON.parse(sessionStorage.getItem('teamInfo'));
-
-    if (teamInfo) {
-      const kickoffTimeObject = new Date(teamInfo.kickoff);
-      const opponentInfo = gameData[teamInfo.opponent.toLowerCase()];
-      setCountdown(kickoffTimeObject.getTime() - Date.now());
-      setTeamInfo(teamInfo);
-      setOpponentInfo(opponentInfo);
-    }
-  }, []);
 
   return (
     <div className="wrapper">
