@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function TeamCard(props) {
+export default function TeamCard({teamName, teamLogoUrl}) {
   return (
     <div className="team-card">
-      <h2>{props.teamName}</h2>
-      <img src={`${props.teamLogoUrl}`} alt={`${props.teamName} Logo`} />
+      <h2>{teamName}</h2>
+      <img src={`${teamLogoUrl}`} alt={`${teamName} Logo`} />
     </div>
   );
 }
