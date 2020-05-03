@@ -47,7 +47,7 @@ export default function Home(props) {
   return (
     <div className="wrapper">
       <header>
-        <h1>Countdown to Kickoff</h1>
+        <h1>2020 Countdown to Kickoff</h1>
       </header>
       <TeamSelect
         teamInfo={teamInfo}
@@ -58,31 +58,45 @@ export default function Home(props) {
       {teamInfo.team ? (
         <div className="container">
           <div className="matchup-section">
-            <h2>
-              {new Date(teamInfo.kickoff).toLocaleString('en-us', {
-                dateStyle: 'full',
-                timeStyle: 'short'
-              })}
-            </h2>
-            {/* <h3>{new Date(teamInfo.kickoff).toLocaleTimeString('en-US')}</h3> */}
+            {
+              typeof opponentInfo === 'undefined'
+                ? null
+                : <h2>
+                    {new Date(teamInfo.kickoff).toLocaleString('en-us', {
+                      dateStyle: 'full',
+                      timeStyle: 'short'
+                    })}
+                  </h2>
+            }
+            
             <div className="matchup-teams">
               <TeamCard
                 teamName={teamInfo.team}
                 teamLogoUrl={teamInfo.teamLogoUrl}
               />
               <span className="vs">vs.</span>
-              <TeamCard
-                teamName={opponentInfo.team}
-                teamLogoUrl={opponentInfo.teamLogoUrl}
-              />
+              {
+                typeof opponentInfo === 'undefined'
+                 ? <div className='team-card'><h2>TBD</h2></div>
+                 : <TeamCard
+                    teamName={opponentInfo.team}
+                    teamLogoUrl={opponentInfo.teamLogoUrl}
+                  />
+              }
+              
             </div>
           </div>
-          <div>
-            <div className="kickoff-countdown-section">
-              <h3>Kick Off In:</h3>
-              <Countdown kickoff={countdown} />
-            </div>
-          </div>
+          {
+            typeof opponentInfo === 'undefined'
+              ? null
+              : <div>
+                  <div className="kickoff-countdown-section">
+                    <h3>Kick Off In:</h3>
+                    <Countdown kickoff={countdown} />
+                  </div>
+                </div>
+          }
+          
         </div>
       ) : null}
     </div>
