@@ -122,7 +122,11 @@ header h1::after {
 
 .countdown-timer > div {
   padding: 1em;
-  width: 78px;
+  width: calc(100% / 4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .time-value {
