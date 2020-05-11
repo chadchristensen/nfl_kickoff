@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export default function TeamCard({teamName, teamLogoUrl}) {
+function TeamCard({teamName, teamLogoUrl}) {
   return (
     <AnimatePresence>
       <motion.div
@@ -16,3 +16,5 @@ export default function TeamCard({teamName, teamLogoUrl}) {
     </AnimatePresence>
   );
 }
+
+export default React.memo(TeamCard);

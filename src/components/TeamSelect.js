@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function TeamSelect(props) {
+function TeamSelect(props) {
   const teamList = Object.keys(props.gameData)
     .sort()
     .map(team => (
@@ -24,3 +24,5 @@ export default function TeamSelect(props) {
     </div>
   );
 }
+
+export default React.memo(TeamSelect);
