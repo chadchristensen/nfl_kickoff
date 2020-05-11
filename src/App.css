@@ -155,11 +155,17 @@ header h1::after {
   justify-content: center;
   align-items: center;
   width: 220px;
+  height: 220px;
   padding: 1em 2.5em;
   margin: 1em;
   border: 1px solid #ddd;
   background-color: #fff;
   border-radius: 5px;
+}
+
+.team-card img {
+  width: 100px;
+  height: 100px;
 }
 
 .vs {
