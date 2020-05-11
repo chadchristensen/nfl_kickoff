@@ -71,6 +71,7 @@ export default function Home(props) {
             
             <div className="matchup-teams">
               <TeamCard
+                key={teamInfo.team}
                 teamName={teamInfo.team}
                 teamLogoUrl={teamInfo.teamLogoUrl}
               />
@@ -79,6 +80,7 @@ export default function Home(props) {
                 typeof opponentInfo === 'undefined'
                  ? <div className='team-card'><h2>TBD</h2></div>
                  : <TeamCard
+                    key={opponentInfo.team}
                     teamName={opponentInfo.team}
                     teamLogoUrl={opponentInfo.teamLogoUrl}
                   />
