@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useInterval } from '../customHooks.js';
 import gameData from '../gameData.js';
-import TeamCard from './TeamCard.js';
+import ConditionalComponent from './ConditionalComponent.js';
+import Wrapper from './Wrapper.js';
+import Container from './Container.js'
+import Header from './Header.js';
+import GameCard from './GameCard.js';
 import Countdown from './Countdown.js';
 import TeamSelect from './TeamSelect.js';
 
@@ -45,62 +49,27 @@ export default function Home(props) {
   };
 
   return (
-    <div className="wrapper">
-      <header>
-        <h1>2020 Countdown to Kickoff</h1>
-      </header>
+    <Wrapper>
+      <Header />
       <TeamSelect
         teamInfo={teamInfo}
         gameData={gameData}
         handleTeamChange={handleTeamChange}
       />
-
-      {teamInfo.team ? (
-        <div className="container">
-          <div className="matchup-section">
-            {
-              typeof opponentInfo === 'undefined'
-                ? null
-                : <h2>
-                    {new Date(teamInfo.kickoff).toLocaleString('en-us', {
-                      dateStyle: 'full',
-                      timeStyle: 'short'
-                    })}
-                  </h2>
-            }
-            
-            <div className="matchup-teams">
-              <TeamCard
-                key={teamInfo.team}
-                teamName={teamInfo.team}
-                teamLogoUrl={teamInfo.teamLogoUrl}
-              />
-              <span className="vs">vs.</span>
-              {
-                typeof opponentInfo === 'undefined'
-                 ? <div className='team-card'><h2>TBD</h2></div>
-                 : <TeamCard
-                    key={opponentInfo.team}
-                    teamName={opponentInfo.team}
-                    teamLogoUrl={opponentInfo.teamLogoUrl}
-                  />
-              }
-              
+      <ConditionalComponent condition={typeof teamInfo.team !== 'undefined'}>
+        <Container>
+          <GameCard
+            teamInfo={teamInfo}
+            opponentInfo={opponentInfo}
+          />
+          <ConditionalComponent condition={typeof opponentInfo !== 'undefined'}>
+            <div className="kickoff-countdown-section">
+              <h3>Kick Off In:</h3>
+              <Countdown kickoff={countdown} />
             </div>
-          </div>
-          {
-            typeof opponentInfo === 'undefined'
-              ? null
-              : <div>
-                  <div className="kickoff-countdown-section">
-                    <h3>Kick Off In:</h3>
-                    <Countdown kickoff={countdown} />
-                  </div>
-                </div>
-          }
-          
-        </div>
-      ) : null}
-    </div>
+          </ConditionalComponent>
+        </Container>
+      </ConditionalComponent>
+    </Wrapper>
   );
 }
