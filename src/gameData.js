@@ -1,3 +1,6 @@
+import saintsLogo from './img/pile-of-poo.svg';
+
+
 export default {
   'atlanta falcons': {
     team: 'Atlanta Falcons',
@@ -163,7 +166,7 @@ export default {
   'new orleans saints': {
     team: 'New Orleans Saints',
     teamLogoUrl:
-      'https://ssl.gstatic.com/onebox/media/sports/logos/AC5-UEeN3V_fjkdFXtHWfQ_96x96.png',
+      saintsLogo,
     opponent: 'Tampa Bay Buccaneers',
     kickoff: '09/13/2020 16:25:00'
   },
