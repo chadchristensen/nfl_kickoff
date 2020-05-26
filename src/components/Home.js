@@ -7,7 +7,7 @@ import Container from './Container.js'
 import Header from './Header.js';
 import GameCard from './GameCard.js';
 import Countdown from './Countdown.js';
-import TeamSelect from './TeamSelect.js';
+import Typeahead from './Typeahead.js';
 
 export default function Home(props) {
   // State Hooks
@@ -34,8 +34,8 @@ export default function Home(props) {
     }
   }, 1000);
 
-  const handleTeamChange = evt => {
-    const teamInfo = gameData[evt.target.value.toLowerCase()];
+  const handleTeamChange = teamName => {
+    const teamInfo = gameData[teamName.toLowerCase()];
     const opponentInfo = gameData[teamInfo.opponent.toLowerCase()];
     const kickoffTimeObject = new Date(teamInfo.kickoff);
 
@@ -51,8 +51,7 @@ export default function Home(props) {
   return (
     <Wrapper>
       <Header />
-      <TeamSelect
-        teamInfo={teamInfo}
+      <Typeahead
         gameData={gameData}
         handleTeamChange={handleTeamChange}
       />
