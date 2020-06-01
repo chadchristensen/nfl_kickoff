@@ -1,39 +1,17 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
 
-const TypeaheadInput = styled.input`
-    padding: .5rem 1rem;
-    border-radius: .25rem;
-    font-size: 1.25rem;
-`
+import TypeaheadInput from './TypeaheadInput';
+import TypeaheadResults from './TypeaheadResults';
 
-const TypeaheadResults = styled.ul`
-  padding: 0;
-
-  & :last-child {
-    border-bottom-left-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
-  }
-
-  li {
-    display: flex;
-    align-items: center;
-    background-color: white;
-    padding: 0.5rem 1rem;
-    border-bottom: 1px solid gray;
-    font-size: 1.25rem;
-
-    &:hover, &:focus {
-      background: #CFEEFF;
-      cursor: pointer;
-    }
-
-    img {
-      height: 2.5rem;
-      width: 2.5rem;
-      padding-right: 1rem;
-    }
-  }
+const TypeaheadWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 2px 2px 5px 0px #00000045;
+  border-radius: 0.5rem;
 `
 
 export default function Typeahead({ gameData, handleTeamChange }) {
@@ -64,33 +42,16 @@ export default function Typeahead({ gameData, handleTeamChange }) {
   }
 
   return (
-    <>
-    <label htmlFor="team-search">Search for a team</label>
-    <TypeaheadInput
-      type="text"
-      name="team-search"
-      id="team-search"
-      placeholder="Enter team name"
-      onChange={handleTeamSearch}
-      value={searchTerm}
-    />
-    <TypeaheadResults>
-      {
-        searchTerm.length > 1
-          ? filteredResults.length > 0
-            ? filteredResults.map(team => (
-              <li
-                tabIndex='0'
-                onKeyPress={(e) => e.key === 'Enter' && handleTeamSelect(team.teamName)}
-                onClick={() => handleTeamSelect(team.teamName)}
-              >
-                <img src={team.logo} alt={`${team.teamName} logo`} aria-hidden={true}/> {team.teamName}
-              </li>
-            ))
-            : <li>No results found</li>
-          : null
-      }
-    </TypeaheadResults>
-    </>
+    <TypeaheadWrapper>
+      <TypeaheadInput
+        searchTerm={searchTerm}
+        handleTeamSearch={handleTeamSearch}
+      />
+      <TypeaheadResults
+        searchTerm={searchTerm}
+        filteredResults={filteredResults}
+        handleTeamSelect={handleTeamSelect}
+      />
+    </TypeaheadWrapper>
   )
 }
