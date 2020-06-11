@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 
-const SearchResults = styled.ul`
+const SearchResults = styled(motion.ul)`
   z-index: 100;
   position: absolute;
   top: 100%;
@@ -34,18 +34,31 @@ const SearchResults = styled.ul`
   }
 `
 
-export default function TypeaheadResults({ searchTerm, filteredResults, handleTeamSelect}) {
+export default function TypeaheadResults({ searchTerm, filteredResults, handleTeamSelect }) {
+
+  const ulVariants = {
+    visible: { transition: { staggerChildren: 0.07 } },
+    hidden: { transition: { staggerChildren: 0.02, when: "afterChildren" } },
+  }
+  const variants = {
+    visible: {
+      x: 0,
+      opacity: 1
+    },
+    hidden: { x: 50, opacity: 0 },
+  }
+
   return (
-    <SearchResults>
+    <SearchResults variants={ulVariants} animate={searchTerm.length > 1 ? "visible" : "hidden"}>
       {
         searchTerm.length > 1
           ? filteredResults.length > 0
-            ? filteredResults.map(team => (
+            ? filteredResults.map((team, i) => (
               <motion.li
-                animate={{ x: [15, -5, 0] }}
-                transition={{ duration: 0.4 }}
-                positionTransition
                 key={team.teamName}
+                initial="hidden"
+                variants={variants}
+                positionTransition
                 tabIndex='0'
                 onKeyPress={(e) => e.key === 'Enter' && handleTeamSelect(team.teamName)}
                 onClick={() => handleTeamSelect(team.teamName)}
@@ -56,6 +69,6 @@ export default function TypeaheadResults({ searchTerm, filteredResults, handleTe
             : <li>No results found</li>
           : null
       }
-    </SearchResults>
+    </SearchResults >
   )
 }
