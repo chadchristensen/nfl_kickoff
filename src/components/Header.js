@@ -2,13 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledHeading = styled.h1`
+  background-image: url("./img/grass.jpg");
+  background-color: #446b25;
   text-align: center;
   color: #eee;
   text-transform: uppercase;
-  font-size: 3em;
+  font-size: 3rem;
   text-shadow: 3px 0px 0px rgba(0, 0, 0, 0.25);
-  padding-bottom: 16px;
-  margin-top: 0;
+  padding: 1.25rem;
+  margin: 0;
 
   &::after {
     content: ' ';
@@ -29,7 +31,7 @@ const StyledHeading = styled.h1`
 export default function Header() {
   return (
     <header>
-      <StyledHeading>2020 Countdown to Kickoff</StyledHeading>
+      <StyledHeading>Countdown to <br/> 2020 Kickoff</StyledHeading>
     </header>
   )
 }
