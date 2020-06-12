@@ -11,18 +11,18 @@ import Typeahead from './Typeahead.js';
 
 export default function Home(props) {
   // State Hooks
-  const [teamInfo, setTeamInfo] = useState({});
+  const [selectedTeam, setSelectedTeam] = useState({});
   const [opponentInfo, setOpponentInfo] = useState({});
   const [countdown, setCountdown] = useState(0);
 
   useEffect(() => {
-    const teamInfo = JSON.parse(sessionStorage.getItem('teamInfo'));
+    const selectedTeam = JSON.parse(sessionStorage.getItem('selectedTeam'));
 
-    if (teamInfo) {
-      const kickoffTimeObject = new Date(teamInfo.kickoff);
-      const opponentInfo = gameData[teamInfo.opponent.toLowerCase()];
+    if (selectedTeam) {
+      const kickoffTimeObject = new Date(selectedTeam.kickoff);
+      const opponentInfo = gameData[selectedTeam.opponent.toLowerCase()];
       setCountdown(kickoffTimeObject.getTime() - Date.now());
-      setTeamInfo(teamInfo);
+      setSelectedTeam(selectedTeam);
       setOpponentInfo(opponentInfo);
     }
   }, []);
@@ -35,40 +35,48 @@ export default function Home(props) {
   }, 1000);
 
   const handleTeamChange = teamName => {
-    const teamInfo = gameData[teamName.toLowerCase()];
-    const opponentInfo = gameData[teamInfo.opponent.toLowerCase()];
-    const kickoffTimeObject = new Date(teamInfo.kickoff);
+    const selectedTeam = gameData[teamName.toLowerCase()];
+    const opponentInfo = gameData[selectedTeam.opponent.toLowerCase()];
+    const kickoffTimeObject = new Date(selectedTeam.kickoff);
 
     setCountdown(kickoffTimeObject.getTime() - Date.now());
 
-    setTeamInfo(teamInfo);
+    setSelectedTeam(selectedTeam);
     setOpponentInfo(opponentInfo);
 
     // Store team in sessionStorage to keep result if page refreshes
-    sessionStorage.setItem('teamInfo', JSON.stringify(teamInfo));
+    sessionStorage.setItem('selectedTeam', JSON.stringify(selectedTeam));
   };
 
   return (
-    <Wrapper>
+    <>
       <Header />
-      <Typeahead
-        gameData={gameData}
-        handleTeamChange={handleTeamChange}
-      />
-      <ConditionalComponent condition={typeof teamInfo.team !== 'undefined'}>
-        <Container>
-          <GameCard
-            teamInfo={teamInfo}
-            opponentInfo={opponentInfo}
-          />
-          <ConditionalComponent condition={typeof opponentInfo !== 'undefined'}>
-            <div className="kickoff-countdown-section">
-              <h3>Kick Off In:</h3>
-              <Countdown kickoff={countdown} />
-            </div>
-          </ConditionalComponent>
-        </Container>
-      </ConditionalComponent>
-    </Wrapper>
+      <Wrapper>
+        <Typeahead
+          gameData={gameData}
+          handleTeamChange={handleTeamChange}
+        />
+        <hr
+          style={{
+            borderTop: '1px solid #f2f2f2',
+            margin: '1.5rem'
+          }}
+        />
+        <ConditionalComponent condition={typeof selectedTeam.team !== 'undefined'}>
+          <Container>
+            <GameCard
+              teamInfo={selectedTeam}
+              opponentInfo={opponentInfo}
+            />
+            <ConditionalComponent condition={typeof opponentInfo !== 'undefined'}>
+              <div>
+                <h3>Kick Off In:</h3>
+                <Countdown kickoff={countdown} />
+              </div>
+            </ConditionalComponent>
+          </Container>
+        </ConditionalComponent>
+      </Wrapper>
+    </>
   );
 }
