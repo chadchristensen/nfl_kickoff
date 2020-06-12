@@ -6,7 +6,7 @@ const SearchWrapper = styled.div`
   display: flex;
   align-items: center;
   padding: 0 0.25rem;
-  background-color: white;
+  background-color: #f2f2f2;
   border-radius: inherit;
   border-bottom-left-radius: ${props => props.areResultsVisible ? '0' : 'inherit'};
   border-bottom-right-radius: ${props => props.areResultsVisible ? '0' : 'inherit'};
@@ -22,6 +22,7 @@ const SearchWrapper = styled.div`
 const SearchInput = styled.input`
   width: 100%;
   padding: 0.75rem;
+  background-color: inherit;
   font-size: 1.25rem;
   appearance: none;
   border: none;

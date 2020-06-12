@@ -7,10 +7,11 @@ import TypeaheadResults from './TypeaheadResults';
 const TypeaheadWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50%;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto 1.5rem;
   position: relative;
-  box-shadow: 2px 2px 5px 0px #00000045;
+  box-shadow: 2px 2px 5px 0px #00000025;
   border-radius: 0.5rem;
 `
 

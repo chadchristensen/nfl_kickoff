@@ -13,7 +13,7 @@ const SearchResults = styled(motion.ul)`
   padding: 0;
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
-  box-shadow: 2px 2px 5px 0px #00000045;
+  box-shadow: 2px 2px 5px 0px #00000025;
 
   li {
     display: flex;
