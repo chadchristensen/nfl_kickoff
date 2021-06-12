@@ -7,8 +7,8 @@ const StyledCard = styled(motion.div)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 220px;
-  height: 220px;
+  width: 175px;
+  height: 175px;
   padding: 1em 2.5em;
   margin: 1em;
   border: 1px solid #ddd;

@@ -60,8 +60,8 @@ export default function TypeaheadResults({ searchTerm, filteredResults, handleTe
                 variants={variants}
                 positionTransition
                 tabIndex='0'
-                onKeyPress={(e) => e.key === 'Enter' && handleTeamSelect(team.teamName)}
-                onClick={() => handleTeamSelect(team.teamName)}
+                onKeyPress={(e) => e.key === 'Enter' && handleTeamSelect(team)}
+                onClick={() => handleTeamSelect(team)}
               >
                 <img src={team.logo} alt={`${team.teamName} logo`} aria-hidden={true} /> {team.teamName}
               </motion.li>

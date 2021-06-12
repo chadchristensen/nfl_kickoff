@@ -13,7 +13,7 @@ export default function GameCard({ teamInfo, opponentInfo }) {
   return (
     <StyledGameCard>
       <ConditionalComponent condition={typeof opponentInfo !== 'undefined'}>
-        <DateDisplay kickoff={teamInfo.kickoff} />
+        <DateDisplay kickoff={teamInfo.games[0].kickoff} />
       </ConditionalComponent>
       <Matchup
         teamInfo={teamInfo}

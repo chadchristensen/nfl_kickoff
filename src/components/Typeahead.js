@@ -19,7 +19,14 @@ export default function Typeahead({ gameData, handleTeamChange }) {
   const [filteredResults, setFilteredResults] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
-  const teams = Object.values(gameData).map(team => ({ teamName: team.team, logo: team.teamLogoUrl }))
+  const teams = Object.entries(gameData)
+                      .map(([teamCode, teamInfo]) => (
+                        {
+                          teamCode,
+                          teamName: teamInfo.team,
+                          logo: teamInfo.teamLogoUrl
+                        }
+                      ));
 
   const handleTeamSearch = (e) => {
     const { value } = e.target;
@@ -36,10 +43,10 @@ export default function Typeahead({ gameData, handleTeamChange }) {
     setFilteredResults(result);
   }
 
-  const handleTeamSelect = (teamName) => {
+  const handleTeamSelect = ({teamCode}) => {
     setSearchTerm('');
     setFilteredResults([]);
-    handleTeamChange(teamName);
+    handleTeamChange(teamCode);
   }
 
   return (

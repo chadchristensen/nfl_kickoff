@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const TimeValue = styled.div`
   color: #ff0000;
   text-shadow: 0px 0 5px #ec3636;
-  font-size: 5em;
+  font-size: 3.75em;
 
   @media(max-width: 820px) {
     font-size: 3.5em;

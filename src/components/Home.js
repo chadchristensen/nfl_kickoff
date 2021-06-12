@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useInterval } from '../customHooks.js';
-import gameData from '../gameData.js';
+import gameData from '../gameData.ts';
 import ConditionalComponent from './ConditionalComponent.js';
 import Wrapper from './Wrapper.js';
 import Container from './Container.js'
@@ -19,8 +19,8 @@ export default function Home(props) {
     const selectedTeam = JSON.parse(sessionStorage.getItem('selectedTeam'));
 
     if (selectedTeam) {
-      const kickoffTimeObject = new Date(selectedTeam.kickoff);
-      const opponentInfo = gameData[selectedTeam.opponent.toLowerCase()];
+      const kickoffTimeObject = new Date(selectedTeam.games[0].kickoff);
+      const opponentInfo = gameData[selectedTeam.games[0].opponent];
       setCountdown(kickoffTimeObject.getTime() - Date.now());
       setSelectedTeam(selectedTeam);
       setOpponentInfo(opponentInfo);
@@ -34,10 +34,10 @@ export default function Home(props) {
     }
   }, 1000);
 
-  const handleTeamChange = teamName => {
-    const selectedTeam = gameData[teamName.toLowerCase()];
-    const opponentInfo = gameData[selectedTeam.opponent.toLowerCase()];
-    const kickoffTimeObject = new Date(selectedTeam.kickoff);
+  const handleTeamChange = teamCode => {
+    const selectedTeam = gameData[teamCode];
+    const opponentInfo = gameData[selectedTeam.games[0].opponent];
+    const kickoffTimeObject = new Date(selectedTeam.games[0].kickoff);
 
     setCountdown(kickoffTimeObject.getTime() - Date.now());
 
@@ -70,7 +70,7 @@ export default function Home(props) {
             />
             <ConditionalComponent condition={typeof opponentInfo !== 'undefined'}>
               <div>
-                <h3>Kick Off In:</h3>
+                <h3>Kickoff Is In:</h3>
                 <Countdown kickoff={countdown} />
               </div>
             </ConditionalComponent>

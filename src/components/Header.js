@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import grass from '../img/grass.jpg';
 
 const StyledHeading = styled.h1`
-  background-image: url("./img/grass.jpg");
+  background-image: url(${grass});
   background-color: #446b25;
   text-align: center;
   color: #eee;
@@ -31,7 +32,7 @@ const StyledHeading = styled.h1`
 export default function Header() {
   return (
     <header>
-      <StyledHeading>Countdown to <br/> 2020 Kickoff</StyledHeading>
+      <StyledHeading>Countdown to <br/> 2021 Kickoff</StyledHeading>
     </header>
   )
 }

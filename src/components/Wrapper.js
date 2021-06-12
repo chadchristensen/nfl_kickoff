@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import grass from '../img/grass.jpg';
 
 const Content = styled.div`
   position: relative;
@@ -11,7 +12,8 @@ const Content = styled.div`
       top: 0;
       height: 150px;
       width: 100%;
-      background-image: url("./img/grass.jpg");
+      background-image: url(${grass});
+      background-color: #446b25;
       z-index: 0;
     }
 `
