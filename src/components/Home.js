@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useInterval } from '../customHooks.js';
 import gameData from '../gameData.ts';
+import quotes from '../footballQuotes.ts';
 import ConditionalComponent from './ConditionalComponent.js';
 import Wrapper from './Wrapper.js';
 import Container from './Container.js'
@@ -14,6 +15,7 @@ export default function Home(props) {
   const [selectedTeam, setSelectedTeam] = useState({});
   const [opponentInfo, setOpponentInfo] = useState({});
   const [countdown, setCountdown] = useState(0);
+  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
   useEffect(() => {
     const selectedTeam = JSON.parse(sessionStorage.getItem('selectedTeam'));
@@ -75,6 +77,36 @@ export default function Home(props) {
               </div>
             </ConditionalComponent>
           </Container>
+        </ConditionalComponent>
+        <ConditionalComponent condition={!selectedTeam.team}>
+          <figure
+            style={{
+              background: '#eee',
+              padding: '1rem 1.5rem',
+              borderRadius: '.25rem',
+              width: '65%',
+              margin: '0 auto'
+            }}
+          >
+            <blockquote
+              style={{
+                margin: '0 0 1.25rem 0',
+                fontSize: '1.5rem',
+                lineHeight: '2rem'
+              }}
+            >
+              {randomQuote.text}
+            </blockquote>
+            <figcaption
+              style={{
+                marginLeft: '1rem',
+                fontSize: '1.125rem',
+                fontStyle: 'italic'
+              }}
+            >
+              &mdash; {randomQuote.author}
+            </figcaption>
+          </figure>
         </ConditionalComponent>
       </Wrapper>
     </>

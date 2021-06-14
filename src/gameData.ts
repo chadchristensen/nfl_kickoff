@@ -197,7 +197,7 @@ const teamData: TeamData = {
     games: [
       {
         opponent: 'KC',
-        kickoff: '09/12/2020 16:25:00'
+        kickoff: '09/12/2021 16:25:00'
       }
     ]
   },
@@ -351,7 +351,7 @@ const teamData: TeamData = {
     games: [
       {
         opponent: 'CHI',
-        kickoff: '09/12/2020 20:20:00'
+        kickoff: '09/12/2021 20:20:00'
       }
     ]
   },
