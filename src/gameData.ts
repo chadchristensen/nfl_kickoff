@@ -39,7 +39,7 @@ const teamData: TeamData = {
   'WAS': {
     team: 'Washington Football Team',
     teamLogoUrl:
-      'https://ssl.gstatic.com/onebox/media/sports/logos/z_Or7w7bQ_ALmWUNsdd7AQ_96x96.png',
+      'https://ssl.gstatic.com/onebox/media/sports/logos/o0CCwss-QfFnJaVdGIHFmQ_96x96.png',
     games: [
       {
         opponent: 'LAC',
@@ -347,7 +347,7 @@ const teamData: TeamData = {
   'LAR': {
     team: 'Los Angeles Rams',
     teamLogoUrl:
-      'https://ssl.gstatic.com/onebox/media/sports/logos/UyYc_V_6Vabrvr7ous98_A_96x96.png',
+      'https://ssl.gstatic.com/onebox/media/sports/logos/CXW68CjwPIaUurbvSUSyJw_96x96.png',
     games: [
       {
         opponent: 'CHI',
