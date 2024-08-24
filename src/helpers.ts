@@ -1,14 +1,14 @@
 export default {
-  getDaysFromMilliseconds(ms) {
+  getDaysFromMilliseconds(ms: number): number {
     return Math.floor(ms / (1000 * 60 * 60 * 24));
   },
-  getHoursFromMilliseconds(ms) {
+  getHoursFromMilliseconds(ms: number): number {
     return Math.floor((ms % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   },
-  getMinutesFromMilliseconds(ms) {
+  getMinutesFromMilliseconds(ms: number): number {
     return Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
   },
-  getSecondsFromMilliseconds(ms) {
+  getSecondsFromMilliseconds(ms: number): number {
     return Math.floor((ms % (1000 * 60)) / 1000);
   }
 };
