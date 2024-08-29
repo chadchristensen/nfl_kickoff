@@ -8,13 +8,13 @@ type MatchupProps = {
 
 export default function Matchup({ teamInfo, opponentInfo }: MatchupProps) {
   return (
-    <>
+    <div className='flex flex-col md:flex-row justify-center items-center gap-x-4'>
       <TeamCard
         key={teamInfo.team}
         teamName={teamInfo.team}
         teamLogoUrl={teamInfo.teamLogoUrl}
       />
-      <span>vs.</span>
+      <span className='text-[2em] font-semibold'>vs.</span>
       {
         typeof opponentInfo === 'undefined'
           ? <div className='team-card'><h2>TBD</h2></div>
@@ -24,6 +24,6 @@ export default function Matchup({ teamInfo, opponentInfo }: MatchupProps) {
             teamLogoUrl={opponentInfo.teamLogoUrl}
           />
       }
-    </>
+    </div>
   )
 }

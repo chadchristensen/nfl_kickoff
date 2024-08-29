@@ -2,11 +2,13 @@ import { useState, useEffect } from 'react';
 import { useInterval } from '../customHooks.ts';
 import gameData, { TeamData } from '../gameData.ts';
 import quotes from '../footballQuotes.ts';
-import Wrapper from './Wrapper';
 import Header from './Header';
 import GameCard from './GameCard';
 import Countdown from './Countdown';
 import Typeahead from './Typeahead';
+import { Card, CardContent, CardHeader, CardTitle } from './ui/card.tsx';
+import QuoteBlock from './Quote.tsx';
+import DateDisplay from './DateDisplay.tsx';
 
 // TODO: Extract quote component
 
@@ -55,68 +57,51 @@ export default function Home() {
   return (
     <>
       <Header />
-      <Wrapper>
-        <Typeahead
-          handleTeamChange={handleTeamChange}
-        />
-        <hr
-          style={{
-            borderTop: '1px solid #f2f2f2',
-            margin: '1.5rem'
-          }}
-        />
-        {
-          typeof selectedTeam?.team !== 'undefined' ? (
-            <div>
-              <GameCard
-                teamInfo={selectedTeam}
-                opponentInfo={opponentInfo}
-              />
-              {
-                opponentInfo ? (
-                  <>
-                    <h3>Kickoff Is In:</h3>
-                    <Countdown kickoffTimeInMilliseconds={countdown} />
-                  </>
-                ) : null
-              }
-            </div>
-          ) :
-            null
-        }
-        {
-          !selectedTeam?.team ? (
-            <figure
-              style={{
-                background: '#eee',
-                padding: '1rem 1.5rem',
-                borderRadius: '.25rem',
-                width: '65%',
-                margin: '0 auto'
-              }}
-            >
-              <blockquote
-                style={{
-                  margin: '0 0 1.25rem 0',
-                  fontSize: '1.5rem',
-                  lineHeight: '2rem'
-                }}
-              >
-                {randomQuote.text}
-              </blockquote>
-              <figcaption
-                style={{
-                  marginLeft: '1rem',
-                  fontSize: '1.125rem',
-                  fontStyle: 'italic'
-                }}
-              >
-                &mdash; {randomQuote.author}
-              </figcaption>
-            </figure>
-          ) : null
-        }
-      </Wrapper>
+      <Card className='max-w-4xl m-auto'>
+        <CardHeader>
+          <CardTitle className='text-center'>
+            Countdown to Kickoff
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <Typeahead
+            selectedTeam={selectedTeam}
+            handleTeamChange={handleTeamChange}
+          />
+          <hr
+            style={{
+              borderTop: '1px solid #f2f2f2',
+              margin: '1.5rem'
+            }}
+          />
+          {
+            typeof selectedTeam?.team !== 'undefined' ? (
+              <div className='flex flex-col items-center bg-gray-100 border-gray-200 border-2 gap-4 p-8 rounded-md'>
+                <GameCard
+                  teamInfo={selectedTeam}
+                  opponentInfo={opponentInfo}
+                />
+                {
+                  opponentInfo ? (
+                    <>
+                      <DateDisplay kickoffTime={selectedTeam.games[0].kickoff} />
+                      <Countdown kickoffTimeInMilliseconds={countdown} />
+                    </>
+                  ) : null
+                }
+
+              </div>
+            ) :
+              null
+          }
+          {
+            !selectedTeam?.team ? (
+              <QuoteBlock randomQuote={randomQuote} />
+            ) : null
+          }
+        </CardContent>
+
+      </Card>
     </>
   );
 }
