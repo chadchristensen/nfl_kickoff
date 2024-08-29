@@ -7,7 +7,7 @@ type CountdownProps = {
 
 export default function Countdown({ kickoffTimeInMilliseconds }: CountdownProps) {
   return (
-    <>
+    <div className='inline-flex gap-2 sm:gap-8 bg-gray-950 px-8 py-4 rounded-sm'>
       <ClockSection value={h.getDaysFromMilliseconds(kickoffTimeInMilliseconds)} label="days" />
       <ClockSection value={h.getHoursFromMilliseconds(kickoffTimeInMilliseconds)} label="hours" />
       <ClockSection
@@ -18,6 +18,6 @@ export default function Countdown({ kickoffTimeInMilliseconds }: CountdownProps)
         value={h.getSecondsFromMilliseconds(kickoffTimeInMilliseconds)}
         label="seconds"
       />
-    </>
+    </div>
   );
 }

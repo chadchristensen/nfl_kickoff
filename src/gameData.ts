@@ -136,7 +136,7 @@ const teamData: TeamList = {
   },
   "TB": {
     "team": "Tampa Bay Buccaneers",
-    "teamLogoUrl": "https://ssl.gstatic.com/onebox/media/sports/logos/ClUk-p3KMCjGo9G68zPr2A_96x96.png",
+    "teamLogoUrl": "https://ssl.gstatic.com/onebox/media/sports/logos/cv5_3oTDQB0gT7l0g2gSGg_96x96.png",
     "games": [
       {
         "opponent": "WAS",

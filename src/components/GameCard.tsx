@@ -10,11 +10,6 @@ type GameCardProps = {
 export default function GameCard({ teamInfo, opponentInfo }: GameCardProps) {
   return (
     <>
-      {
-        opponentInfo ? (
-          <DateDisplay kickoffTime={teamInfo.games[0].kickoff} />
-        ) : null
-      }
       <Matchup
         teamInfo={teamInfo}
         opponentInfo={opponentInfo}
