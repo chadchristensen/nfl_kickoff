@@ -25,7 +25,7 @@ function TeamCard({ teamName, teamLogoUrl }: TeamCardProps) {
           </CardHeader>
 
           <CardContent>
-            <img className='w-24 h-24 object-cover' src={`${teamLogoUrl}`} alt={`${teamName} Logo`} />
+            <img className='w-32 aspect-video' src={`${teamLogoUrl}`} alt={`${teamName} Logo`} />
           </CardContent>
         </Card>
       </motion.div>
