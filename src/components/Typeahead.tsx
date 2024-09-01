@@ -57,7 +57,7 @@ export default function Typeahead({ selectedTeam, handleTeamChange }: TypeaheadP
           >
             {value
               ? <span className='flex gap-2 items-center'>
-                <img src={`${teams.find((team) => team.teamName === value)?.teamLogoUrl}`} className='h-8' />
+                <img src={`${teams.find((team) => team.teamName === value)?.teamLogoUrl}`} className='h-6 aspect-auto' />
                 {value}
               </span>
               : "Select team..."}
@@ -87,7 +87,7 @@ export default function Typeahead({ selectedTeam, handleTeamChange }: TypeaheadP
                       )}
                     />
                     <img
-                      className="h-8 w-8 object-cover mr-2"
+                      className="h-8 mr-2 aspect-square"
                       src={team.teamLogoUrl}
                       alt={team.teamName}
                     />

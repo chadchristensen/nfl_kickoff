@@ -16,7 +16,7 @@ export type TeamList = {
 const teamData: TeamList = {
   "KC": {
     "team": "Kansas City Chiefs",
-    "teamLogoUrl": "https://ssl.gstatic.com/onebox/media/sports/logos/5N0l1KbG1BHPyP8_S7SOXg_96x96.png",
+    "teamLogoUrl": "/img/Kansas_City_Chiefs_logo.svg",
     "games": [
       {
         "opponent": "BAL",
@@ -26,7 +26,7 @@ const teamData: TeamList = {
   },
   "PHI": {
     "team": "Philadelphia Eagles",
-    "teamLogoUrl": "https://ssl.gstatic.com/onebox/media/sports/logos/s4ab0JjXpDOespDSf9Z14Q_96x96.png",
+    "teamLogoUrl": "/img/Philadelphia_Eagles_logo.svg",
     "games": [
       {
         "opponent": "GB",
@@ -36,7 +36,7 @@ const teamData: TeamList = {
   },
   "ATL": {
     "team": "Atlanta Falcons",
-    "teamLogoUrl": "https://ssl.gstatic.com/onebox/media/sports/logos/QNdwQPxtIRYUhnMBYq-bSA_96x96.png",
+    "teamLogoUrl": "/img/Atlanta_Falcons_logo.svg",
     "games": [
       {
         "opponent": "PIT",
@@ -46,7 +46,7 @@ const teamData: TeamList = {
   },
   "BUF": {
     "team": "Buffalo Bills",
-    "teamLogoUrl": "https://ssl.gstatic.com/onebox/media/sports/logos/_RMCkIDTISqCPcSoEvRDhg_96x96.png",
+    "teamLogoUrl": "/img/Buffalo_Bills_logo.svg",
     "games": [
       {
         "opponent": "ARI",
@@ -56,7 +56,7 @@ const teamData: TeamList = {
   },
   "CHI": {
     "team": "Chicago Bears",
-    "teamLogoUrl": "https://ssl.gstatic.com/onebox/media/sports/logos/7uaGv3B13mXyBhHcTysHcA_96x96.png",
+    "teamLogoUrl": "/img/Chicago_Bears_logo.svg",
     "games": [
       {
         "opponent": "TEN",
@@ -66,7 +66,7 @@ const teamData: TeamList = {
   },
   "CIN": {
     "team": "Cincinnati Bengals",
-    "teamLogoUrl": "https://ssl.gstatic.com/onebox/media/sports/logos/wDDRqMa40nidAOA5883Vmw_96x96.png",
+    "teamLogoUrl": "/img/Cincinnati_Bengals_logo.svg",
     "games": [
       {
         "opponent": "NE",
@@ -76,7 +76,7 @@ const teamData: TeamList = {
   },
   "IND": {
     "team": "Indianapolis Colts",
-    "teamLogoUrl": "https://ssl.gstatic.com/onebox/media/sports/logos/zOE7BhKadEjaSrrFjcnR4w_96x96.png",
+    "teamLogoUrl": "/img/Indianapolis_Colts_logo.svg",
     "games": [
       {
         "opponent": "HOU",
@@ -86,7 +86,7 @@ const teamData: TeamList = {
   },
   "MIA": {
     "team": "Miami Dolphins",
-    "teamLogoUrl": "https://ssl.gstatic.com/onebox/media/sports/logos/1ysKnl7VwOQO8g94gbjKdQ_96x96.png",
+    "teamLogoUrl": "/img/Miami_Dolphins_logo.svg",
     "games": [
       {
         "opponent": "JAX",
@@ -106,7 +106,7 @@ const teamData: TeamList = {
   },
   "NYG": {
     "team": "New York Giants",
-    "teamLogoUrl": "https://ssl.gstatic.com/onebox/media/sports/logos/q8qdTYh-OWR5uO_QZxFENw_96x96.png",
+    "teamLogoUrl": "/img/New_York_Giants_logo.svg",
     "games": [
       {
         "opponent": "MIN",
@@ -116,7 +116,7 @@ const teamData: TeamList = {
   },
   "LAC": {
     "team": "Los Angeles Chargers",
-    "teamLogoUrl": "https://ssl.gstatic.com/onebox/media/sports/logos/tmQHdnwuMcA9n69f5rBr0w_96x96.png",
+    "teamLogoUrl": "/img/Los_Angeles_Chargers_logo.svg",
     "games": [
       {
         "opponent": "LV",
@@ -126,7 +126,7 @@ const teamData: TeamList = {
   },
   "SEA": {
     "team": "Seattle Seahawks",
-    "teamLogoUrl": "https://ssl.gstatic.com/onebox/media/sports/logos/iVPY42GLuHmD05DiOvNSVg_96x96.png",
+    "teamLogoUrl": "/img/Seattle_Seahawks_logo.svg",
     "games": [
       {
         "opponent": "DEN",
@@ -136,7 +136,7 @@ const teamData: TeamList = {
   },
   "TB": {
     "team": "Tampa Bay Buccaneers",
-    "teamLogoUrl": "https://ssl.gstatic.com/onebox/media/sports/logos/cv5_3oTDQB0gT7l0g2gSGg_96x96.png",
+    "teamLogoUrl": "/img/Tampa_Bay_Buccaneers_logo.svg",
     "games": [
       {
         "opponent": "WAS",
@@ -146,7 +146,7 @@ const teamData: TeamList = {
   },
   "CLE": {
     "team": "Cleveland Browns",
-    "teamLogoUrl": "https://ssl.gstatic.com/onebox/media/sports/logos/bTzlW33n9s53DxRzmlZXyg_96x96.png",
+    "teamLogoUrl": "/img/Cleveland_Browns_logo.svg",
     "games": [
       {
         "opponent": "DAL",
@@ -156,7 +156,7 @@ const teamData: TeamList = {
   },
   "DET": {
     "team": "Detroit Lions",
-    "teamLogoUrl": "https://ssl.gstatic.com/onebox/media/sports/logos/WE1l856fyyHh6eAbbb8hQQ_96x96.png",
+    "teamLogoUrl": "/img/Detroit_Lions_logo.svg",
     "games": [
       {
         "opponent": "LAR",
@@ -166,7 +166,7 @@ const teamData: TeamList = {
   },
   "SF": {
     "team": "San Francisco 49ers",
-    "teamLogoUrl": "https://ssl.gstatic.com/onebox/media/sports/logos/ku3s7M4k5KMagYcFTCie_g_96x96.png",
+    "teamLogoUrl": "/img/San_Francisco_49ers_logo.svg",
     "games": [
       {
         "opponent": "NYJ",
@@ -176,7 +176,7 @@ const teamData: TeamList = {
   },
   "PIT": {
     "team": "Pittsburgh Steelers",
-    "teamLogoUrl": "https://ssl.gstatic.com/onebox/media/sports/logos/mdUFLAswQ4jZ6V7jXqaxig_96x96.png",
+    "teamLogoUrl": "/img/Pittsburgh_Steelers_logo.svg",
     "games": [
       {
         "opponent": "ATL",
@@ -186,7 +186,7 @@ const teamData: TeamList = {
   },
   "BAL": {
     "team": "Baltimore Ravens",
-    "teamLogoUrl": "https://ssl.gstatic.com/onebox/media/sports/logos/1vlEqqoyb9uTqBYiBeNH-w_96x96.png",
+    "teamLogoUrl": "/img/Baltimore_Ravens_logo.svg",
     "games": [
       {
         "opponent": "KC",
@@ -196,7 +196,7 @@ const teamData: TeamList = {
   },
   "HOU": {
     "team": "Houston Texans",
-    "teamLogoUrl": "https://ssl.gstatic.com/onebox/media/sports/logos/sSUn9HRpYLQtEFF2aG9T8Q_96x96.png",
+    "teamLogoUrl": "/img/Houston_Texans_logo.svg",
     "games": [
       {
         "opponent": "IND",
@@ -206,7 +206,7 @@ const teamData: TeamList = {
   },
   "TEN": {
     "team": "Tennessee Titans",
-    "teamLogoUrl": "https://ssl.gstatic.com/onebox/media/sports/logos/9J9dhhLeSa3syZ1bWXRjaw_96x96.png",
+    "teamLogoUrl": "/img/Tennessee_Titans_logo.svg",
     "games": [
       {
         "opponent": "CHI",
@@ -216,7 +216,7 @@ const teamData: TeamList = {
   },
   "JAX": {
     "team": "Jacksonville Jaguars",
-    "teamLogoUrl": "https://ssl.gstatic.com/onebox/media/sports/logos/HLfqVCxzVx5CUDQ07GLeWg_96x96.png",
+    "teamLogoUrl": "/img/Jacksonville_Jaguars_logo.svg",
     "games": [
       {
         "opponent": "MIA",
@@ -226,7 +226,7 @@ const teamData: TeamList = {
   },
   "CAR": {
     "team": "Carolina Panthers",
-    "teamLogoUrl": "https://ssl.gstatic.com/onebox/media/sports/logos/4BdHvKq4Iyxsp8WaAbpDuQ_96x96.png",
+    "teamLogoUrl": "/img/Carolina_Panthers_logo.svg",
     "games": [
       {
         "opponent": "NO",
@@ -236,7 +236,7 @@ const teamData: TeamList = {
   },
   "GB": {
     "team": "Green Bay Packers",
-    "teamLogoUrl": "https://ssl.gstatic.com/onebox/media/sports/logos/IlA4VGrUHzSVLCOcHsRKgg_96x96.png",
+    "teamLogoUrl": "/img/Green_Bay_Packers_logo.svg",
     "games": [
       {
         "opponent": "PHI",
@@ -246,7 +246,7 @@ const teamData: TeamList = {
   },
   "ARI": {
     "team": "Arizona Cardinals",
-    "teamLogoUrl": "https://ssl.gstatic.com/onebox/media/sports/logos/5Mh3xcc8uAsxAi3WZvfEyQ_96x96.png",
+    "teamLogoUrl": "/img/Arizona_Cardinals_logo.svg",
     "games": [
       {
         "opponent": "BUF",
@@ -256,7 +256,7 @@ const teamData: TeamList = {
   },
   "NE": {
     "team": "New England Patriots",
-    "teamLogoUrl": "https://ssl.gstatic.com/onebox/media/sports/logos/z89hPEH9DZbpIYmF72gSaw_96x96.png",
+    "teamLogoUrl": "/img/New_England_Patriots_logo.svg",
     "games": [
       {
         "opponent": "CIN",
@@ -266,7 +266,7 @@ const teamData: TeamList = {
   },
   "MIN": {
     "team": "Minnesota Vikings",
-    "teamLogoUrl": "https://ssl.gstatic.com/onebox/media/sports/logos/Vmg4u0BSYZ-1Mc-5uyvxHg_96x96.png",
+    "teamLogoUrl": "/img/Minnesota_Vikings_logo.svg",
     "games": [
       {
         "opponent": "NYG",
@@ -276,7 +276,7 @@ const teamData: TeamList = {
   },
   "LV": {
     "team": "Las Vegas Raiders",
-    "teamLogoUrl": "https://ssl.gstatic.com/onebox/media/sports/logos/QysqoqJQsTbiJl8sPL12Yg_96x96.png",
+    "teamLogoUrl": "/img/Las_Vegas_Raiders_logo.svg",
     "games": [
       {
         "opponent": "LAC",
@@ -286,7 +286,7 @@ const teamData: TeamList = {
   },
   "DEN": {
     "team": "Denver Broncos",
-    "teamLogoUrl": "https://ssl.gstatic.com/onebox/media/sports/logos/ZktET_o_WU6Mm1sJzJLZhQ_96x96.png",
+    "teamLogoUrl": "/img/Denver_Broncos_logo.svg",
     "games": [
       {
         "opponent": "SEA",
@@ -296,7 +296,7 @@ const teamData: TeamList = {
   },
   "WAS": {
     "team": "Washington Commanders",
-    "teamLogoUrl": "https://ssl.gstatic.com/onebox/media/sports/logos/o0CCwss-QfFnJaVdGIHFmQ_96x96.png",
+    "teamLogoUrl": "/img/Washington_Commanders_logo.svg",
     "games": [
       {
         "opponent": "TB",
@@ -306,7 +306,7 @@ const teamData: TeamList = {
   },
   "DAL": {
     "team": "Dallas Cowboys",
-    "teamLogoUrl": "https://ssl.gstatic.com/onebox/media/sports/logos/-zeHm0cuBjZXc2HRxRAI0g_96x96.png",
+    "teamLogoUrl": "/img/Dallas_Cowboys_logo.svg",
     "games": [
       {
         "opponent": "CLE",
@@ -316,7 +316,7 @@ const teamData: TeamList = {
   },
   "LAR": {
     "team": "Los Angeles Rams",
-    "teamLogoUrl": "https://ssl.gstatic.com/onebox/media/sports/logos/CXW68CjwPIaUurbvSUSyJw_96x96.png",
+    "teamLogoUrl": "/img/Los_Angeles_Rams_logo.svg",
     "games": [
       {
         "opponent": "DET",
@@ -326,7 +326,7 @@ const teamData: TeamList = {
   },
   "NYJ": {
     "team": "New York Jets",
-    "teamLogoUrl": "https://ssl.gstatic.com/onebox/media/sports/logos/Rb4y9m3hkTcYVmdl10geqw_96x96.png",
+    "teamLogoUrl": "/img/New_York_Jets_logo.svg",
     "games": [
       {
         "opponent": "SF",
