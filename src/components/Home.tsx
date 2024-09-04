@@ -57,7 +57,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <Card className='max-w-4xl m-auto'>
+      <Card className='max-w-4xl m-auto shadow-md'>
         <CardHeader>
           <CardTitle className='text-center'>
             Countdown to Kickoff
