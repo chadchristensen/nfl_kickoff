@@ -77,6 +77,7 @@ export default function Home() {
           {
             typeof selectedTeam?.team !== 'undefined' ? (
               <div className='flex flex-col items-center bg-gray-100 border-gray-200 border-2 gap-4 p-8 rounded-md'>
+                {countdown < 0 && <div className="text-[2em] font-semibold">GAME OVER</div>}
                 <GameCard
                   teamInfo={selectedTeam}
                   opponentInfo={opponentInfo}
@@ -89,7 +90,6 @@ export default function Home() {
                     </>
                   ) : null
                 }
-
               </div>
             ) :
               null

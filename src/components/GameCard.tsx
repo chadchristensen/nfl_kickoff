@@ -1,5 +1,4 @@
 import { TeamData } from '../gameData.ts';
-import DateDisplay from './DateDisplay.tsx';
 import Matchup from './Matchup.tsx';
 
 type GameCardProps = {
